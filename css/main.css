@@ -61,6 +61,11 @@ section {
   margin-top: 3.4rem;
 }
 
+.logo-link {
+  padding: 3rem;
+  margin: -3rem;
+}
+
 .nav {
   display: flex;
   margin-left: 12.8rem;
@@ -94,11 +99,6 @@ section {
 
 .nav-link:hover:before {
   width: 100%;
-}
-
-
-.logo {
-  text-align: left;
 }
 
 
@@ -755,9 +755,6 @@ video {
 }
 
 @media (max-width: 1200px) {
-  .logo-container {
-    margin-left: 2.4rem;
-  }
   .hero-title span {
     margin-left: 0;
   }
