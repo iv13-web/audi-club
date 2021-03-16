@@ -278,12 +278,6 @@ section {
   position: relative;
 }
 
-.index-video:hover .play {
-  height: 140px;
-  width: 140px;
-}
-
-
 .play {
   background-color: rgba(255, 255, 255, .2);
   width: 120px;
@@ -298,6 +292,53 @@ section {
   margin: auto;
   transition: all .3s ease;
   backdrop-filter: blur(10px);
+}
+
+.hidden {
+  display: none;
+}
+
+.play:hover {
+  height: 140px;
+  width: 140px;
+}
+
+.pause {
+  background-color: rgba(255, 255, 255, .2);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  transition: all .3s ease;
+  backdrop-filter: blur(10px);
+  /* display: none; */
+}
+
+.pause:before {
+  content: '';
+  position: absolute;
+  top: 4.8rem;
+  left: 50px;
+  width: 0.7rem;
+  height: 2.6rem;
+  background-color: #fff;
+  bottom: 0;
+}
+
+.pause:after {
+  content: '';
+  position: absolute;
+  top: 4.8rem;
+  right: 50px;
+  width: 0.7rem;
+  height: 2.6rem;
+  background-color: #fff;
 }
 
 .play svg {
@@ -622,11 +663,11 @@ section {
 }
 
 .map-text-big {
-  position: relative;
-  top: 20rem;
+  display: inline-block;
   font-size: 4.8rem;
   font-weight: 700;
-  display: inline-block;
+  position: relative;
+  top: 20rem;
 }
 
 .map-text-big span{
@@ -653,10 +694,10 @@ section {
 
 .map-footer {
   background-color: #000;
-  padding: 40px 0;
-  position: fixed;
   bottom: 0;
   left: 0;
+  padding: 40px 0;
+  position: fixed;
   right: 0;
 }
 
@@ -692,66 +733,115 @@ section {
 }
 
 .box {
-  width: 100px;
+  /*position: relative;*/
+  background-color: teal;
   height: 100px;
   margin-bottom: 20px;
-  background-color: teal;
-  /*position: relative;*/
+  width: 100px;
 }
 
 .relative {
   background-color: #fff;
-  width: 40px;
   height: 40px;
+  left: 20px;
   position: relative;
   top: 20px;
-  left: 20px;
+  width: 40px;
 }
 
 .fixed {
   background-color: #fff;
-  width: 100%;
   height: 40px;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
 }
 
 .sub {
   background: purple;
-  width: 200px;
   height: 200px;
   position: relative;
+  width: 200px;
 }
 
 .absolute {
   background-color: #fff;
-  width: 40px;
   height: 40px;
   position: absolute;
-  top: 20px;
   right: 0px;
+  top: 20px;
+  width: 40px;
 }
 
 .left, .right {
+  background-color: teal;
   display: inline-block;
-  width: 400px;
   height: 3000px;
   margin-right: 20px;
-  background-color: teal;
+  width: 400px;
 }
 
 .sticky {
-  width: 100px;
-  height: 100px;
-  top: 20px;
-  margin-bottom: 40px;
   background-color: white;
+  height: 100px;
+  margin-bottom: 40px;
   position: sticky;
+  top: 20px;
+  width: 100px;
 }
 
 video {
   max-width: 100%;
+}
+
+/* Swiper */
+.swiper-pagination {
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: red;
+}
+
+.swipper-button-prev,
+.swipper-button-next {
+  background-color: white !important;
+  position: absolute;
+}
+
+.swiper-button-prev {
+  color: #b51c1c;
+  left: -5rem;
+  outline: none;
+  right: auto;
+  top: 55%;
+}
+
+.swiper-button-next {
+  color: #b51c1c;
+  left: auto;
+  outline: none;
+  right: -5rem;
+  top: 55%;
+}
+
+.swiper-pagination-bullet {
+  outline: none;
+}
+
+
+.container-relative {
+  position: relative;
 }
 
 @media (max-width: 1200px) {
@@ -785,6 +875,16 @@ video {
   }
   p {
     margin-bottom: 2.4rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .swiper-button-prev {
+    display: none;
+  }
+  
+  .swiper-button-next {
+    display: none;
   }
 }
 
