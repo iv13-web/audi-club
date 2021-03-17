@@ -64,16 +64,16 @@ pauseButton.addEventListener('click', function () {
 
 // Скрытие кнопки pause при перемещении курсора с неё
 pauseButton.addEventListener('mouseleave', function() {
-  pauseButton.classList.add('transparent')
+  this.classList.add('transparent')
 })
 
 // Показ кнопки pause при перемещении курсора с неё
 pauseButton.addEventListener('mouseenter', function() {
-  pauseButton.classList.remove('transparent')
+  this.classList.remove('transparent')
 }, false)
 
 // Показ кнопки play при нажатии в любое место на видео
 video.addEventListener('click', function () {
   playButton.classList.remove('remove')
-  video.pause();
+  this.pause();
 })
