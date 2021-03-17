@@ -44,17 +44,36 @@
   });
 
 
-let playVideoButton = document.querySelector('.play')
-let pauseVideoButton = document.querySelector('.pause')
+let playButton = document.querySelector('.play')
+let pauseButton = document.querySelector('.pause')
+let video = document.getElementById('video')
 
-function play() {
+// Запуск видео по клику на кнопку play
+playButton.addEventListener('click', function() {
   video.play();
-  playVideoButton.classList.add('hidden')
-  pauseVideoButton.classList.remove('hidden')
-}
+  this.classList.add('remove')
+  pauseButton.classList.remove('remove')
+})
 
-function pause() {
+// Пауза видео по клику на кнопку pause
+pauseButton.addEventListener('click', function () {
   video.pause();
-  playVideoButton.classList.remove('hidden')
-  pauseVideoButton.classList.add('hidden') 
-}
+  playButton.classList.remove('remove')
+  this.classList.add('remove') 
+})
+
+// Скрытие кнопки pause при перемещении курсора с неё
+pauseButton.addEventListener('mouseleave', function() {
+  pauseButton.classList.add('transparent')
+})
+
+// Показ кнопки pause при перемещении курсора с неё
+pauseButton.addEventListener('mouseenter', function() {
+  pauseButton.classList.remove('transparent')
+}, false)
+
+// Показ кнопки play при нажатии в любое место на видео
+video.addEventListener('click', function () {
+  playButton.classList.remove('remove')
+  video.pause();
+})
